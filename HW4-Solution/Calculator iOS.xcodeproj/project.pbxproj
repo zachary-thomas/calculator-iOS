@@ -20,6 +20,8 @@
 		9EE845AC215BE1590091EFE4 /* ConversionCalcTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE845AB215BE1590091EFE4 /* ConversionCalcTextField.swift */; };
 		9EE845AE215BE2820091EFE4 /* ConversionCalcLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE845AD215BE2820091EFE4 /* ConversionCalcLabel.swift */; };
 		9EE845B0215BE2AD0091EFE4 /* ConversionCalcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE845AF215BE2AD0091EFE4 /* ConversionCalcButton.swift */; };
+		9F72541F23675D75001829A6 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72541E23675D75001829A6 /* Conversion.swift */; };
+		9F72542223676211001829A6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F72542123676211001829A6 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		9EE845AB215BE1590091EFE4 /* ConversionCalcTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionCalcTextField.swift; sourceTree = "<group>"; };
 		9EE845AD215BE2820091EFE4 /* ConversionCalcLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionCalcLabel.swift; sourceTree = "<group>"; };
 		9EE845AF215BE2AD0091EFE4 /* ConversionCalcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionCalcButton.swift; sourceTree = "<group>"; };
+		9F72541E23675D75001829A6 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
+		9F72542123676211001829A6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 		9E1E653A2142BF8800F4E8CB = {
 			isa = PBXGroup;
 			children = (
+				9F72542123676211001829A6 /* Default-568h@2x.png */,
+				9F72542023675D9D001829A6 /* Model */,
 				9E1E65452142BF8800F4E8CB /* Calculator-Solution */,
 				9E1E655A2142BF8900F4E8CB /* Calculator-SolutionTests */,
 				9E1E65652142BF8900F4E8CB /* Calculator-SolutionUITests */,
@@ -141,6 +147,14 @@
 				9E1E65682142BF8900F4E8CB /* Info.plist */,
 			);
 			path = "Calculator-SolutionUITests";
+			sourceTree = "<group>";
+		};
+		9F72542023675D9D001829A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F72541E23675D75001829A6 /* Conversion.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E1E65512142BF8900F4E8CB /* LaunchScreen.storyboard in Resources */,
+				9F72542223676211001829A6 /* Default-568h@2x.png in Resources */,
 				9E1E654E2142BF8900F4E8CB /* Assets.xcassets in Resources */,
 				9E1E654C2142BF8800F4E8CB /* Main.storyboard in Resources */,
 			);
@@ -280,6 +295,7 @@
 				9EE845AC215BE1590091EFE4 /* ConversionCalcTextField.swift in Sources */,
 				9E1E65772142C53800F4E8CB /* UnitsAndModes.swift in Sources */,
 				9EE845B0215BE2AD0091EFE4 /* ConversionCalcButton.swift in Sources */,
+				9F72541F23675D75001829A6 /* Conversion.swift in Sources */,
 				9E1E65752142C38700F4E8CB /* DecimalMinusTextField.swift in Sources */,
 				9EE845AE215BE2820091EFE4 /* ConversionCalcLabel.swift in Sources */,
 				9E1E65492142BF8800F4E8CB /* ViewController.swift in Sources */,
@@ -459,7 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6T3ET24GXR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "HW3-Solution/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -477,7 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6T3ET24GXR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "HW3-Solution/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

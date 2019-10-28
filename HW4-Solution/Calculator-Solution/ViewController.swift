@@ -18,6 +18,8 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
     
     var currentMode : CalculatorMode = .Length
     
+    var entries : [Conversion] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         toField.delegate = self
@@ -38,12 +40,16 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
     @IBAction func calculatePressed(_ sender: UIButton) {
         // determine source value of data for conversion and dest value for conversion
         var dest : UITextField?
+//        var conObj: Conversion = Conversion.init(fromVal: <#T##Double#>, toVal: <#T##Double#>, mode: <#T##CalculatorMode#>, fromUnits: <#T##String#>, toUnits: <#T##String#>, timestamp: <#T##Date#>)
+        
+//        conObj.timestamp =
 
         var val = ""
         if let fromVal = fromField.text {
             if fromVal != "" {
                 val = fromVal
                 dest = toField
+               // conObj.toUnits = fromField.text!
             }
         }
         if let toVal = toField.text {
