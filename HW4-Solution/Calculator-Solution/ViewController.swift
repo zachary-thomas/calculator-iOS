@@ -174,6 +174,8 @@ class ViewController: UIViewController, SettingsViewControllerDelegate, HistoryT
         
         self.fromField.text = String (entry.fromVal)
         self.toField.text = String (entry.toVal)
+        
+        self.calculatorHeader.text = "\(entry.mode.rawValue) Conversion Calculator"
     }
 }
 
