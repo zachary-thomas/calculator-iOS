@@ -40,11 +40,9 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
     @IBAction func calculatePressed(_ sender: UIButton) {
         // determine source value of data for conversion and dest value for conversion
         var dest : UITextField?
-//        var conObj: Conversion = Conversion.init(fromVal: <#T##Double#>, toVal: <#T##Double#>, mode: <#T##CalculatorMode#>, fromUnits: <#T##String#>, toUnits: <#T##String#>, timestamp: <#T##Date#>)
-        
-//        conObj.timestamp =
 
         var val = ""
+        
         if let fromVal = fromField.text {
             if fromVal != "" {
                 val = fromVal
@@ -73,7 +71,10 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
                     let convKey =  LengthConversionKey(toUnits: tUnits, fromUnits: fUnits)
                     let toVal = fromVal * lengthConversionTable[convKey]!;
                     dest?.text = "\(toVal)"
+                    
+                    entries.append(Conversion(fromVal: fromVal, toVal: toVal, mode: .Length, fromUnits: fUnits.rawValue, toUnits: tUnits.rawValue, timestamp: Date()))
                 }
+                
             case .Volume:
                 var fUnits, tUnits : VolumeUnit
                 if dest == toField {
@@ -87,9 +88,15 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
                     let convKey =  VolumeConversionKey(toUnits: tUnits, fromUnits: fUnits)
                     let toVal = fromVal * volumeConversionTable[convKey]!;
                     dest?.text = "\(toVal)"
+                    
+                    entries.append(Conversion(fromVal: fromVal, toVal: toVal, mode: .Volume, fromUnits: fUnits.rawValue, toUnits: tUnits.rawValue, timestamp: Date()))
                 }
+
             }
         }
+        
+        
+        
         self.view.endEditing(true)
     }
     
@@ -131,11 +138,18 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "settingsSegue" {
             clearPressed(sender as! UIButton)
-            if let  target = segue.destination.children[0] as? SettingsViewController {
+            if let target = segue.destination as? SettingsViewController {
                 target.mode = currentMode
                 target.fUnits = fromUnits.text
                 target.tUnits = toUnits.text
                 target.delegate = self
+            }
+        }
+        
+        if segue.identifier == "historySegue" {
+            clearPressed(sender as! UIButton)
+            if let target = segue.destination as? HistoryTableViewController {
+                target.entries = entries
             }
         }
     }
@@ -150,6 +164,11 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
     {
         self.fromUnits.text = fromUnits.rawValue
         self.toUnits.text = toUnits.rawValue
+    }
+    
+    func saveConversion(fromVal: Double, toVal: Double, mode: CalculatorMode, fUnits fromUnits: String, toUnits: String, timestamp: Date)
+    {
+        entries.append(Conversion.init(fromVal: fromVal, toVal: toVal, mode: mode, fromUnits: fromUnits, toUnits: toUnits, timestamp: timestamp))
     }
 }
 
