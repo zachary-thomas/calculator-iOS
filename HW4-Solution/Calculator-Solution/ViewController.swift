@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, SettingsViewControllerDelegate {
+class ViewController: UIViewController, SettingsViewControllerDelegate, HistoryTableViewControllerDelegate {
 
     @IBOutlet weak var fromField: UITextField!
     @IBOutlet weak var toField: UITextField!
@@ -137,19 +137,21 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "settingsSegue" {
-            clearPressed(sender as! UIButton)
+            //clearPressed(sender as! UIButton)
             if let target = segue.destination as? SettingsViewController {
                 target.mode = currentMode
                 target.fUnits = fromUnits.text
                 target.tUnits = toUnits.text
                 target.delegate = self
+                
             }
         }
         
         if segue.identifier == "historySegue" {
-            clearPressed(sender as! UIButton)
+            //clearPressed(sender as! UIButton)
             if let target = segue.destination as? HistoryTableViewController {
                 target.entries = entries
+                target.historyDelegate = self
             }
         }
     }
@@ -166,9 +168,12 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
         self.toUnits.text = toUnits.rawValue
     }
     
-    func saveConversion(fromVal: Double, toVal: Double, mode: CalculatorMode, fUnits fromUnits: String, toUnits: String, timestamp: Date)
-    {
-        entries.append(Conversion.init(fromVal: fromVal, toVal: toVal, mode: mode, fromUnits: fromUnits, toUnits: toUnits, timestamp: timestamp))
+    func selectEntry(entry: Conversion) {
+        self.fromUnits.text = entry.fromUnits
+        self.toUnits.text = entry.toUnits
+        
+        self.fromField.text = String (entry.fromVal)
+        self.toField.text = String (entry.toVal)
     }
 }
 
@@ -180,5 +185,6 @@ extension ViewController : UITextFieldDelegate {
             toField.text = ""
         }
     }
+    
 }
 
