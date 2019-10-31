@@ -156,7 +156,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conversion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auK-DX-6St">
-                                            <rect key="frame" x="84" y="9" width="249" height="21"/>
+                                            <rect key="frame" x="94" y="9" width="239" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="converstionLabel"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -164,21 +164,23 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimeStamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsg-4a-bEP">
-                                            <rect key="frame" x="84" y="48" width="249" height="21"/>
+                                            <rect key="frame" x="94" y="48" width="239" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="timeStamp"/>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="length" translatesAutoresizingMaskIntoConstraints="NO" id="3eL-eD-8P4">
-                                            <rect key="frame" x="16" y="11" width="60" height="60"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="length" translatesAutoresizingMaskIntoConstraints="NO" id="3eL-eD-8P4">
+                                            <rect key="frame" x="16" y="8" width="60" height="60"/>
                                             <accessibility key="accessibilityConfiguration" label="thumbnail"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="8jM-dO-YK9"/>
-                                            </constraints>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="3eL-eD-8P4" secondAttribute="bottom" constant="8" id="HnC-TE-23c"/>
+                                        <constraint firstItem="3eL-eD-8P4" firstAttribute="top" secondItem="7MX-wB-ZvZ" secondAttribute="top" constant="8" id="gsQ-Ak-rXN"/>
+                                        <constraint firstItem="3eL-eD-8P4" firstAttribute="leading" secondItem="7MX-wB-ZvZ" secondAttribute="leading" constant="16" id="lrC-oK-ehI"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="conversionLabel" destination="auK-DX-6St" id="mxe-Rc-M7z"/>
@@ -308,6 +310,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="length" width="225" height="225"/>
+        <image name="length" width="75" height="75"/>
     </resources>
 </document>
